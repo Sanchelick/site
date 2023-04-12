@@ -1,0 +1,13 @@
+<% @tovars.each do |korzina|%>
+	<hr>
+	<div class="cartinka"><%= image_tag("#{korzina.tovar_id}.jpeg",style: 'height:15vw;width:15vw') %>
+		<div>
+	<div class="infa"><div class="ne_infa">
+		<h3><%= korzina.name%></h3>
+		<p><%= korzina.jpisanie%></p></div>
+		<div class="cost">
+		<h4>Стоимость: <%=korzina.cost%></h4></div>
+	</div>
+	<div class="knopka" align="right"><%= link_to "Убрать из корзины", :method => :delete%></div>
+	<hr>
+<%end%>

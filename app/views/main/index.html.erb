@@ -1,0 +1,19 @@
+<div class = "d-flex align-items-center justify-content-center">
+	<% if user_singed_in? %>
+		<%= current_user.number %>
+		<%= link_to "Выйти", logout_path, :method => :delete%>
+	<%end%>
+</div>
+<% @product.each do |product|%>
+	<hr>
+	<div class="cartinka"><%= image_tag("#{product.id}",style: 'height:15vw;width:15vw') %><div>
+	<div class="infa"><div class="ne_infa">
+		<h3><%= product.name%></h3>
+		<p><%= product.description%></p></div>
+		<div class="cost">
+		<h4>Стоимость: <%=product.cost%></h4></div>
+	</div>
+	<div class="knopka" align="right"><%= link_to "Добавить в корзину", :method => :post%></div>
+	<hr>
+<%end%>
+<a>

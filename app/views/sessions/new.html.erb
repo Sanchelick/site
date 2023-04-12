@@ -1,0 +1,27 @@
+<center>
+	<%= form_with url: sing_in_path do |form|%>
+		<p>
+			<div class="col-md-3">
+				<%= form.label :Номер %>
+				<%= form.text_field :number, class: "form-control", placeholder: "89xxxxxxxxx"%>
+			</div>
+		</p>
+		<p>
+			<div class="col-md-3">
+				<%= form.label :Пароль %>
+				<%= form.password_field :password, class: "form-control", placeholder: "Пароль"%>
+			</div>
+		</p>
+		<p>
+			<div class="col-md-3">
+				<%= form.label :Пароль %>
+				<%= form.password_field :password_confirmation, class: "form-control", placeholder: "Пароль"%>
+			</div>
+		</p>
+		<p>
+			<div class="col-md-3">
+				<%= form.submit "Войти", class: "btn btn-outline-success"%>
+			</div>
+		</p>
+	<%end%>
+</center>
