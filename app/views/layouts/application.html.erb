@@ -11,12 +11,7 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h4><%= link_to "Хлебальник", root_path, :method => :get,  class: "p-2 text-dark"%></h4>
-      <div class = "aktivity" align="right">
-        <%= button_to "Зарегистрироваться", sing_up_path, class: "btn btn-outline-success", :method => :get%>
-      <%= button_to "Войти", sing_in_path, class: "btn btn-outline-success", :method => :get%></div>
-    </div>
+    <%= render "layouts/header"%>
     <%= yield %>
-  </body>
+    </body>
 </html>
