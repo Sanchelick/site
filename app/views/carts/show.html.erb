@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<ul>
+<% @cart.line_items.each do |item| %>
+  <li><%= item.product.name %> </li>
+  <%end%>
+</ul>
+
+<div>
+  <%= link_to "Edit this cart", edit_cart_path(@cart) %> |
+
+  <%= button_to "Destroy this cart", @cart, method: :delete %>
+</div>

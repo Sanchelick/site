@@ -1,19 +1,25 @@
-<div class = "d-flex align-items-center justify-content-center">
-	<% if user_singed_in? %>
-		<%= current_user.number %>
-		<%= link_to "Выйти", logout_path, :method => :delete%>
+<div class="container mt-5 mb-5">
+	<% @product.each do |product|%>
+		<div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="row p-2 bg-white border rounded">
+               <div class="col-md-3 mt-1"><%= image_tag("#{product.id}", :class =>
+					"img-fluid img-responsive rounded product-image" )%></div>
+                <div class="col-md-6 mt-1">
+                    <h5><%=product.name%></h5>
+                    <p class="text-justify text-truncate para mb-0"><%=product.description %><br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1"><%=product.cost%> руб.</h4><span class="strike-text"><%=product.cost*2%> руб.</span>
+                    </div>
+                    <h6 class="text-success">Расспродажа!</h6>
+                    <%if user_singed_in?%>
+                    <div class="d-flex flex-column mt-4"><%=button_to "Добавить в корзину", line_items_path(product_id: product), class: "btn btn-outline-primary btn-sm mt-2"%></div>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+    </div>
 	<%end%>
 </div>
-<% @product.each do |product|%>
-	<hr>
-	<div class="cartinka"><%= image_tag("#{product.id}",style: 'height:15vw;width:15vw') %><div>
-	<div class="infa"><div class="ne_infa">
-		<h3><%= product.name%></h3>
-		<p><%= product.description%></p></div>
-		<div class="cost">
-		<h4>Стоимость: <%=product.cost%></h4></div>
-	</div>
-	<div class="knopka" align="right"><%= link_to "Добавить в корзину", :method => :post%></div>
-	<hr>
-<%end%>
-<a>
