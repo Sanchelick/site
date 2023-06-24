@@ -23,3 +23,6 @@
     </div>
 	<%end%>
 </div>
+<%if user_singed_in? and @user.status == "admin"%>
+ <div class="d-flex flex-column mt-4"><%=button_to "Добавить товар", class: "btn btn-outline-primary btn-sm mt-2"%></div>
+<%end%>
