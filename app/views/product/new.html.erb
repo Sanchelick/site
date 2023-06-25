@@ -1,0 +1,40 @@
+<center>
+	<%= form_for @product, :html => {multipart: true}, url: add_path do |form| %>
+		<% if @product.errors.any? %>
+			<div class = "alert alert-danger">
+				<% @product.errors.full_messages.each do |message| %>
+					<div><%= message %></div>
+				<% end %>
+			</div>
+		<% end %>
+	<p>
+		<div class="col-md-3">
+			<%= form.label :Название %>
+			<%= form.text_field :name, class: "form-control"%>
+		</div>
+	</p>
+	<p>
+		<div class="col-md-3">
+			<%= form.label :Описание %>
+			<%= form.text_field :description, class: "form-control"%>
+		</div>
+	</p>
+	<p>
+		<div class="col-md-3">
+			<%= form.label :Стоимость %>
+			<%= form.number_field :cost, class: "form-control"%>
+		</div>
+	</p>
+	<p>
+		<div class="col-md-3">
+			<%= form.label :Изображение %>
+			<%= form.file_field :image, class: "form-control"%>
+		</div>
+	</p>
+	<p>
+		<div class="col-md-3">
+			<%= form.submit "Добавить", class: "btn btn-outline-success"%>
+		</div>
+	</p>
+	<% end %>
+</center>

@@ -3,7 +3,7 @@
 		<div class="d-flex justify-content-center row">
         <div class="col-md-10">
             <div class="row p-2 bg-white border rounded">
-               <div class="col-md-3 mt-1"><%= image_tag("#{product.id}", :class =>
+               <div class="col-md-3 mt-1"><%= image_tag(product.image.url, :class =>
 					"img-fluid img-responsive rounded product-image" )%></div>
                 <div class="col-md-6 mt-1">
                     <h5><%=product.name%></h5>
@@ -22,7 +22,7 @@
         </div>
     </div>
 	<%end%>
-</div>
-<%if user_singed_in? and @user.status == "admin"%>
- <div class="d-flex flex-column mt-4"><%=button_to "Добавить товар", class: "btn btn-outline-primary btn-sm mt-2"%></div>
+    <%if user_singed_in? and @user.status == "admin"%>
+ <div class="d-flex flex-column mt-4"><%=button_to "Добавить товар", add_path, class: "btn btn-outline-primary btn-sm mt-2", :method => :get%></div>
 <%end%>
+</div>

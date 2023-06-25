@@ -7,10 +7,7 @@
     <ul class="navbar-nav">
       <% if user_singed_in? %>
       <li class="nav-item">
-    <%= current_user.number %>
-     </li>
-      <li class="nav-item">
-    <%= link_to "Выйти", logout_path, class:"nav-link", :method => :delete%>
+    <%= link_to "#{current_user.number}", logout_path, class:"nav-link", :method => :delete%>
       </li>
       <li class="nav-item">
     <%= link_to "Корзина", carts_path(session[:cart_id]), class:"nav-link", :method => :show%>
