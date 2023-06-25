@@ -3,8 +3,8 @@
 		<div class="d-flex justify-content-center row">
         <div class="col-md-10">
             <div class="row p-2 bg-white border rounded">
-               <div class="col-md-3 mt-1"><%= image_tag("#{product.id}", :class =>
-					"img-fluid img-responsive rounded product-image" )%></div>
+               <div class="col-md-3 mt-1"><%= image_tag @product.image.url(:medium), :class =>
+					"img-fluid img-responsive rounded product-image"%></div>
                 <div class="col-md-6 mt-1">
                     <h5><%=product.name%></h5>
                     <p class="text-justify text-truncate para mb-0"><%=product.description %><br><br></p>

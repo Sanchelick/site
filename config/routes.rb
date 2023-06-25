@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   post "sing_in", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
   get "logout", to: "sessions#destroy"
+  get "add", to: "product#new"
+  post "add", to: "product#create"
   root "main#index"
 end
