@@ -7,7 +7,7 @@
 </ul>
 
 <div>
-  <%= link_to "Edit this cart", edit_cart_path(@cart) %> |
+  <%= button_to "Совершить заказ", @cart, method: :delete %> |
 
-  <%= button_to "Destroy this cart", @cart, method: :delete %>
+  <%= button_to "Удалить корзину", @cart, method: :delete %>
 </div>
